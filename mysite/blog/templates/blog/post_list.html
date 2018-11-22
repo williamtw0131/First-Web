@@ -1,23 +1,13 @@
-<html>
-  <head>
-    <title>William's Web</title>
-  </head>
-  <body>
-    <h1>
-      <strong>
-        <p>hello world!!</p>
-        <p>this is the web</p>
-      </strong>
-    </h1>
-      {% for post in posts %}
-        <div>
-          <h3><a href=''>Title:{{ post.title }}</a></h2>
-          <p>{{ post.text }}</p>
-          <h5><p>created: {{ post.created_date }}</p></h5>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  {% for post in posts %}
+      <div class="post">
+        <div class="date">
+          <p>created: {{ post.created_date }}</p>
         </div>
-      {% endfor %}
-  </body>
-  <footer>
-    <h6>2018/11/21</h6>
-  </footer>
-</html>
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+  {% endfor %}
+{% endblock %}
