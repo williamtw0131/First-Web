@@ -19,6 +19,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
+# Login function 2018/11/27
+LOGIN_REDIRECT_URL = '/'
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'wec6%sdqt1((($+1%p*sfq-heiu8wj130+29%ao#_dz21=6tsk'
 
