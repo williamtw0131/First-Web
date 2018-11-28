@@ -2,9 +2,9 @@
 
 {% block content %}
   <div class="post">
-    {% if post.publish_date %}
+    {% if post.published_date %}
         <div class="date">
-          {{ post.publish_date }}
+          {{ post.published_date }}
         </div>
     {% else %}
         <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
